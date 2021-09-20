@@ -1,0 +1,10 @@
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:23:36 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:26:47 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:28:45 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:30:35 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:31:01 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:32:27 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:40:26 AM -0400"}
+{"level":"error","message":"Loading mods: TypeError: Cannot read property 'requireModule' of undefined","service":"user-service","timestamp":"2021-09-19 10:44:44 AM -0400"}
+{"level":"error","message":"Unhandled rejection: TypeError: Cannot read property 'saveVar' of undefined\n    at Object.mod (C:\\Users\\Michael\\Desktop\\Vibin Bot\\BotFiles\\mods\\GetInviteCount.js:43:24)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)","service":"user-service","timestamp":"2021-09-19 10:44:49 AM -0400"}
+{"level":"error","message":"Unhandled rejection: TypeError: Cannot read property 'saveVar' of undefined\n    at Object.mod (C:\\Users\\Michael\\Desktop\\Vibin Bot\\BotFiles\\mods\\GetInviteCount.js:43:24)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)","service":"user-service","timestamp":"2021-09-19 10:44:53 AM -0400"}

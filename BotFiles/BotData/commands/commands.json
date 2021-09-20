@@ -1,0 +1,317 @@
+{
+  "command": [
+    {
+      "name": "help",
+      "perms": [],
+      "actions": [
+        {
+          "name": "help menu",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "help",
+              "value": "Shows this menu",
+              "inline": "true"
+            },
+            {
+              "name": "kick",
+              "value": "Kicks them",
+              "inline": "true"
+            },
+            {
+              "name": "ban",
+              "value": "Bans them",
+              "inline": "true"
+            },
+            {
+              "name": "mute",
+              "value": "Mutes them",
+              "inline": "true"
+            },
+            {
+              "name": "unmute",
+              "value": "Unmutes them",
+              "inline": "true"
+            },
+            {
+              "name": "purge",
+              "value": "Deletes messages depending on the number put after the command",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Help Menu",
+          "url": "",
+          "authorname": "Vibin' Mod Bot",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "This menu is for the idiots who don't know any of the commands, you guys are losers.",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "kick",
+      "perms": [
+        "god",
+        "mod"
+      ],
+      "actions": [
+        {
+          "name": "get user to kick",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "kickuser",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "get reason",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "kickreason",
+          "vartype": "Text",
+          "savevartype": "temp",
+          "param": "0"
+        },
+        {
+          "name": "kick them",
+          "category": "User Action",
+          "type": "Kick User",
+          "user": "${tempVars.kickuser.id}",
+          "reason": "${tempVars.kickreason}"
+        },
+        {
+          "name": "kick response",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Kick",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${tempVars.kickuser.id}> was kicked for: ${tempVars.kickreason}",
+          "thumbnail": "${tempVars.kickuser.user.avatarURL}",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "ban",
+      "perms": [
+        "god",
+        "mod"
+      ],
+      "actions": [
+        {
+          "name": "get user to ban",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "banuser",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "get reason ban",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "banreason",
+          "vartype": "Text",
+          "savevartype": "temp",
+          "param": "0"
+        },
+        {
+          "name": "ban them",
+          "category": "User Action",
+          "type": "Ban User",
+          "user": "${tempVars.banuser.id}",
+          "reason": "${tempVars.banreason}",
+          "days": ""
+        }
+      ]
+    },
+    {
+      "name": "mute",
+      "perms": [
+        "god",
+        "mod"
+      ],
+      "actions": [
+        {
+          "name": "get user to mute",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "muteuser",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "remove mortal",
+          "category": "User Action",
+          "type": "Remove Role From User",
+          "user": "${tempVars.muteuser.id}",
+          "rolename": "MORTAL",
+          "reason": "Bruh Momento"
+        },
+        {
+          "name": "mute them lol",
+          "category": "User Action",
+          "type": "Add Role to User",
+          "user": "${tempVars.muteuser.id}",
+          "rolename": "mute"
+        },
+        {
+          "name": "Mute response",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Mute",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${tempVars.muteuser.id}> was muted, get fucked.",
+          "thumbnail": "${tempVars.muteuser.user.avatarURL}",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "unmute",
+      "perms": [
+        "god",
+        "mod"
+      ],
+      "actions": [
+        {
+          "name": "get user to unmute",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "unmuteuser",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "add mortal",
+          "category": "User Action",
+          "type": "Add Role to User",
+          "user": "${tempVars.unmuteuser.id}",
+          "rolename": "MORTAL"
+        },
+        {
+          "name": "unmute them lol",
+          "category": "User Action",
+          "type": "Remove Role From User",
+          "user": "${tempVars.unmuteuser.id}",
+          "rolename": "mute",
+          "reason": "Bruh Momento"
+        },
+        {
+          "name": "Unmute response",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Unmute",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${tempVars.unmuteuser.id}> was unmuted, have a nice day.",
+          "thumbnail": "${tempVars.unmuteuser.user.avatarURL}",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "purge",
+      "perms": [
+        "god",
+        "mod"
+      ],
+      "actions": [
+        {
+          "name": "get count",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "purge",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": "1"
+        },
+        {
+          "name": "purge messages",
+          "category": "Channel Action",
+          "type": "Delete All Messages",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "msgcount": "${tempVars.purge}"
+        },
+        {
+          "name": "purge response",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Purge",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Purged ${tempVars.purge} messages!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "blacks",
+      "actions": [
+        {
+          "name": "Blacks?",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Blacks?",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Wow, what a racist bastard. Look at this dood",
+          "thumbnail": "${dbsVars.CommandAuthor.user.avatarURL}",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    }
+  ]
+}

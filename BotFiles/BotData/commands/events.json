@@ -1,0 +1,109 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Welcome",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "864683523776315443",
+          "color": "FF0000",
+          "title": "Welcome",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Grab a Lunchable, <@${tempVars.newuser.id}>.",
+          "thumbnail": "${tempVars.newuser.user.avatarURL}",
+          "image": "",
+          "footer": "If you don't like Lunchables, fuck you, you're a bitch. Go to #roles and get yourself some.",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "Add role",
+          "category": "User Action",
+          "type": "Add Role to User",
+          "user": "${tempVars.newuser.id}",
+          "rolename": "MORTAL"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "msguser"
+      }
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [
+        {
+          "name": "kick",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "864683523776315443",
+          "color": "FF0000",
+          "title": "Kick",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Wow, <@${tempVars.kickuser.id}> was kicked, I wonder why?",
+          "thumbnail": "${tempVars.kickuser.user.avatarURL}",
+          "image": "",
+          "footer": "Their final message: ${tempVars.kickuser.lastMessage}",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Ban",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "864683523776315443",
+          "color": "FF0000",
+          "title": "Ban",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Whoa, <@${tempVars.banuser.id}> was banned, what the hell happened?",
+          "thumbnail": "${tempVars.banuser.user.avatarURL}",
+          "image": "",
+          "footer": "Their final message: ${tempVars.banuser.lastMessage}",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    }
+  ]
+}
